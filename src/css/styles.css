@@ -1,33 +1,79 @@
+.input-field {
+  width: 272px; /* Ширина поля вводу */
+  /* height: 40px; Висота поля вводу */
+  padding: 8px; /* Внутрішній відступ поля вводу */
+  border-radius: 8px; /* Округлення куточків поля вводу */
+  border: 1px solid #ccc; /* Рамка поля вводу */
+  outline: none; /* Відключаємо обведення при фокусі */
+  font-size: 14px; /* Розмір шрифту */
+}
+
+.btn-search {
+  border: none; /* Відключаємо рамку кнопки */
+  border-radius: 8px; /* Округлення куточків кнопки */
+  padding: 8px 16px; /* Внутрішній відступ кнопки */
+  width: 91px; /* Ширина кнопки */
+  /* height: 40px; Висота кнопки */
+  background: #4e75ff; /* Фоновий колір кнопки */
+  color: white; /* Колір тексту кнопки */
+  font-size: 14px; /* Розмір шрифту */
+  cursor: pointer; /* Зміна курсору при наведенні */
+  outline: none; /* Відключаємо обведення при фокусі */
+}
+
+.btn-search:hover {
+  background: #3b5ecf; /* Фоновий колір кнопки при наведенні */
+}
+
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+  max-width: 1128px; /* Ширина контейнера */
+  margin: 0 auto; /* Центруємо контейнер по центру сторінки */
+  padding: 20px; /* Зовнішній відступ контейнера */
+  text-align: center; /* Центруємо текст у контейнері */
 }
 
 .gallery {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 20px;
+  margin-top: 20px; /* Відступ зверху для галереї */
+  display: grid; /* Використовуємо сітку для розміщення елементів */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(360px, 1fr)
+  ); /* Автоматично адаптуємо кількість колонок з мінімальною шириною 360px */
+  grid-gap: 24px; /* Відступ між елементами сітки */
 }
 
 .gallery-item {
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  position: relative; /* Додаємо позицію relative для коректного позиціювання внутрішніх елементів */
+  overflow: hidden; /* Обрізаємо зайвий контент у межах контейнера */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь для кращого виділення елементів */
+  border-radius: 5px; /* Округлення куточків */
 }
 
 .gallery-item img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Зображення розтягується на всю ширину батьківського контейнера */
+  height: auto; /* Автоматична висота для збереження пропорцій */
+  max-width: 100%; /* Зображення не перевищує реальний розмір */
+  max-height: 100%; /* Зображення не перевищує висоту батьківського контейнера */
+  object-fit: cover; /* Зображення зберігає пропорції і вписується в елемент */
+  display: block; /* Забезпечуємо коректне відображення як блочний елемент */
+  border-radius: 5px 5px 0 0; /* Округлення куточків тільки верхніх сторін */
 }
 
 .details {
-  padding: 10px;
-  background-color: #f0f0f0;
+  padding: 10px; /* Внутрішній відступ для розділу деталей */
+  background-color: rgba(
+    240,
+    240,
+    240,
+    0.8
+  ); /* Прозорий фоновий колір розділу деталей */
+  display: flex; /* Використовуємо flexbox для розміщення елементів в одному рядку */
+  justify-content: space-between; /* Рівномірно розподіляємо простір між елементами */
+  box-sizing: border-box; /* Розмір включає границі і внутрішній відступ */
+  border-radius: 0 0 5px 5px; /* Округлення куточків тільки нижніх сторін */
 }
 
 .details p {
-  margin: 5px 0;
+  margin: 5px 0; /* Зовнішній відступи для параграфів */
+  text-decoration: none; /* Відключаємо підкреслення для тексту */
 }

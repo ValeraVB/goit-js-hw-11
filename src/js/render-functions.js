@@ -1,5 +1,7 @@
 import iziToast from 'izitoast'; // Підключаємо бібліотеку повідомлень
 import 'izitoast/dist/css/iziToast.min.css'; // Додатковий імпорт стилів
+import SimpleLightbox from 'simplelightbox'; // Описаний у документації
+import 'simplelightbox/dist/simple-lightbox.min.css'; // Додатковий імпорт стилів
 
 export function clearGallery() {
   const gallery = document.querySelector('#gallery');
