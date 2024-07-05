@@ -1,79 +1,110 @@
 .input-field {
-  width: 272px; /* Ширина поля вводу */
-  /* height: 40px; Висота поля вводу */
-  padding: 8px; /* Внутрішній відступ поля вводу */
-  border-radius: 8px; /* Округлення куточків поля вводу */
-  border: 1px solid #ccc; /* Рамка поля вводу */
-  outline: none; /* Відключаємо обведення при фокусі */
-  font-size: 14px; /* Розмір шрифту */
+  width: 272px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
 }
 
 .btn-search {
-  border: none; /* Відключаємо рамку кнопки */
-  border-radius: 8px; /* Округлення куточків кнопки */
-  padding: 8px 16px; /* Внутрішній відступ кнопки */
-  width: 91px; /* Ширина кнопки */
-  /* height: 40px; Висота кнопки */
-  background: #4e75ff; /* Фоновий колір кнопки */
-  color: white; /* Колір тексту кнопки */
-  font-size: 14px; /* Розмір шрифту */
-  cursor: pointer; /* Зміна курсору при наведенні */
-  outline: none; /* Відключаємо обведення при фокусі */
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  background: #4e75ff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
 }
 
 .btn-search:hover {
-  background: #3b5ecf; /* Фоновий колір кнопки при наведенні */
+  background: #3b5ecf;
 }
 
 .container {
-  max-width: 1128px; /* Ширина контейнера */
-  margin: 0 auto; /* Центруємо контейнер по центру сторінки */
-  padding: 20px; /* Зовнішній відступ контейнера */
-  text-align: center; /* Центруємо текст у контейнері */
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .gallery {
-  margin-top: 20px; /* Відступ зверху для галереї */
-  display: grid; /* Використовуємо сітку для розміщення елементів */
+  margin-top: 20px;
+  display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(360px, 1fr)
   ); /* Автоматично адаптуємо кількість колонок з мінімальною шириною 360px */
-  grid-gap: 24px; /* Відступ між елементами сітки */
+  grid-gap: 24px;
 }
 
 .gallery-item {
-  position: relative; /* Додаємо позицію relative для коректного позиціювання внутрішніх елементів */
-  overflow: hidden; /* Обрізаємо зайвий контент у межах контейнера */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тінь для кращого виділення елементів */
-  border-radius: 5px; /* Округлення куточків */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .gallery-item img {
-  width: 100%; /* Зображення розтягується на всю ширину батьківського контейнера */
-  height: auto; /* Автоматична висота для збереження пропорцій */
-  max-width: 100%; /* Зображення не перевищує реальний розмір */
-  max-height: 100%; /* Зображення не перевищує висоту батьківського контейнера */
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: cover; /* Зображення зберігає пропорції і вписується в елемент */
-  display: block; /* Забезпечуємо коректне відображення як блочний елемент */
-  border-radius: 5px 5px 0 0; /* Округлення куточків тільки верхніх сторін */
+  display: block;
+  border-radius: 5px 5px 0 0;
 }
 
 .details {
-  padding: 10px; /* Внутрішній відступ для розділу деталей */
+  padding: 10px;
   background-color: rgba(
     240,
     240,
     240,
     0.8
   ); /* Прозорий фоновий колір розділу деталей */
-  display: flex; /* Використовуємо flexbox для розміщення елементів в одному рядку */
-  justify-content: space-between; /* Рівномірно розподіляємо простір між елементами */
-  box-sizing: border-box; /* Розмір включає границі і внутрішній відступ */
-  border-radius: 0 0 5px 5px; /* Округлення куточків тільки нижніх сторін */
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-radius: 0 0 5px 5px;
 }
 
 .details p {
-  margin: 5px 0; /* Зовнішній відступи для параграфів */
-  text-decoration: none; /* Відключаємо підкреслення для тексту */
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.loader-container {
+  display: none; /* Початково ховаємо loader */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Півпрозорий білий фон */
+  z-index: 1000; /* Висока з-index, щоб loader був поверх усіх елементів */
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #f3f3f3; /* Світлий колір для обведення */
+  border-top: 8px solid #3498db; /* Синій колір для верхньої частини loader */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite; /* Анімація обертання */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
