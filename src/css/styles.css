@@ -57,6 +57,10 @@
   border-radius: 5px 5px 0 0;
 }
 
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
 .details {
   padding: 10px;
   background-color: rgba(
